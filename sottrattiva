@@ -1,0 +1,13 @@
+import("stdfaust.lib"); 
+gain = vslider("gain", 1 , 0 , 1 , 0.1);
+process = no.noise : fi.lowpass(2,6000) : fi.highpass(2,6000);
+// RANDMAX è il primo generatore di numeri
+// RANDMAX è un numero casuale chiamato da faust in base alla frequenza di campionamento
+// un suono è rumore quando al suo interno non ci sono le caratteristiche descrittive di un suono
+// i numeri che identificano lo slider sono: il valore iniziale, valore minimo, valore massimo e step incrementale
+// lo step incrementale determina la precisione dello slider
+// il valore iniziale è il valore che deve assumere lo slider quando viene acceso il programma
+// noise definisce un rumore che contiene tutte le frequenze
+// spettroscopio: contenuto del suono nel dominio della frequenza, frequenza sulle x, ampiezza sulle y
+// oscilloscopio: contenuto del suono nel dominio del tempo, tempo sulle x, ampiezza sulle y
+// lowpass è un filtro passabasso
